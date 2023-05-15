@@ -10,3 +10,67 @@ body {
     font-family: Open sans, Helvetica, sans-serif;
     padding: clamp(20px, 5vw, 50px) 10px;
 }
+
+.block-main{
+    background: #212121;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.block-main h1{
+    font-size: 1.79em;
+    text-align: center;
+    color: white;
+    padding: 25px 0 10px 0;
+}
+form{
+    padding: 30px;
+}
+
+form p{
+    transform: translateY(-15px);
+    color: #757575;
+    margin-bottom: 5px;
+}
+
+form label{
+    font-size: 20px;
+    color: white;
+}
+
+form input{
+    margin: 10px 0px 30px 0;
+    width: 100%;
+    background-color: #212121;
+    outline: none;
+    border: none;
+    font-size: 17px;
+    color: white;
+    border-bottom: 1px solid white;
+    padding-bottom: 10px;
+    
+}
+
+form button{
+    display: block;
+    margin: 10px auto;
+    background-color: #fffcdc;
+    border: none;
+    min-width: 200px;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 3px;
+    outline: none;
+    font-weight: 600;
+    font-family: Raleway, sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form button:hover{
+    transform: translateY(-5px);
+}
+
+/* #fffcdc */
+/* #dfe3ce */
