@@ -13,26 +13,112 @@
     />
   </head>
   <body>
-    <div class="block-main">
-      <h1>Inscrivez-vous.</h1>
-      <form>
-        <label for="name">Nom d'utilisateur</label>
-        <input type="text" placeholder="3 caractères minimum" id="name">
-        
-        <label for="email">Entrez votre email</label>
-        <input type="email" placeholder="Votre email" id="email">
-        
-        <label for="password">Mot de passe</label>
-        <input type="password" placeholder="Votre mot de passe" id="password">
-        <p>Au moins un symbole, un chiffre ainsi que 6 caractères minimum.</p>
-        
-        <label for="confirm">Confirmez le mot de passe</label>
-        <input type="password" placeholder="Confirmez le mot de passe" id="confirm">
+      <div class="container">
+        <h2>Inscrivez-vous.</h2>
 
-        <button>Création du compte</button>
-      </form>
-    </div>
+        <form>
+          <div class="input-group">
+            <label for="user">Nom d'utilisateur</label>
+            <div class="icon-input-container">
+              <input 
+              type="text" 
+              name="user" 
+              id="user" 
+              autocomplete="off" 
+              placeholder="3 caractères minimum" 
+              maxlength="24"
+              >
+              <img src="ressources/check.svg" alt="Icone de validation" class="icon-check">
+            </div>
+            <span class="error-msg">Choisissez un pseudo contenant au moins 3 caractères.</span>
+          </div>
+
+          <div class="input-group">
+            <label for="email">Entrez votre email</label>
+            <div class="icon-input-container">
+              <input 
+              type="text" 
+              id="email" 
+              autocomplete="off" 
+              placeholder="Votre email" 
+              >
+              <img src="ressources/check.svg" alt="Icone de validation" class="icon-check">
+            </div>
+            <span class="error-msg">Rentrez un email valide.</span>
+          </div>
+
+          <div class="input-group">
+            <label for="password">Mot de passe</label>
+            <div class="icon-input-container">
+              <input 
+              type="password" 
+              id="password" 
+              autocomplete="off" 
+              placeholder="3 caractères minimum" 
+              maxlength="24"
+              >
+              <img src="ressources/check.svg" alt="Icone de validation" class="icon-check">
+            </div>
+            <span class="password-info">Au moins un symbole, un chiffre ainsi que 6 caractères minimum.</span>
+            <div class="lines">
+              <div class="l1"><span>Faible</span></div>
+              <div class="l2"><span>Moyen</span></div>
+              <div class="l3"><span>Fort</span></div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label for="confirm">Confirmez le mot de passe</label>
+            <div class="icon-input-container">
+              <input 
+              type="password" 
+              id="confirm" 
+              autocomplete="off" 
+              placeholder="Confirmez le mot de passe" 
+              >
+              <img src="ressources/check.svg" alt="Icone de validation" class="icon-check">
+            </div>
+          </div>
+
+          <button type="submit">Création du compte</button>
+        </form>
+      </div>
 
     <script src="app.js"></script>
   </body>
 </html>
+
+
+
+
+
+<!-- <div class="block-main">
+  <h1>Inscrivez-vous.</h1>
+  <form>
+    <label for="name">Nom d'utilisateur
+      <img src="ressources/check.svg" alt="" class="a">
+    </label>
+    <input type="text" placeholder="3 caractères minimum" id="name">
+    
+    <label for="email">Entrez votre email
+      <img src="ressources/check.svg" alt="" class="b">
+    </label>
+    <input type="email" placeholder="Votre email" id="email">
+
+    
+    <label for="password">Mot de passe
+      <img src="ressources/check.svg" alt="" class="c">
+    </label>
+    <input type="password" placeholder="Votre mot de passe" id="password">
+
+    <p>Au moins un symbole, un chiffre ainsi que 6 caractères minimum.</p>
+    
+    <label for="confirm">Confirmez le mot de passe
+      <img src="ressources/check.svg" alt="" class="d">
+    </label>
+    <input type="password" placeholder="Confirmez le mot de passe" id="confirm">
+
+
+    <button>Création du compte</button>
+  </form>
+</div> -->

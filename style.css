@@ -11,7 +11,75 @@ body {
     padding: clamp(20px, 5vw, 50px) 10px;
 }
 
-.block-main{
+.container{
+    background: #212121;
+    max-width: 600px;
+    margin: auto;
+    border-radius: 5px;
+    padding: 30px;
+    color: #f1f1f1;
+}
+
+h2{
+    font-size: 30px;
+    font-family: Raleway, sans-serif;
+    text-align: center;
+}
+
+.input-group{
+    margin-top: 30px;
+    position: relative;
+}
+
+label{
+    font-size: 20px;
+    display: block;
+    position: relative;
+}
+
+input{
+    display: block;
+    width: 100%;
+    font-size: 18px;
+    color: #f1f1f1;
+    padding: 10px 0;
+    outline: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #f1f1f1;
+}
+
+input::placeholder{
+    font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+img{
+    width: 30px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .block-main{
     background: #212121;
     max-width: 600px;
     margin: auto;
@@ -37,6 +105,28 @@ form p{
 form label{
     font-size: 20px;
     color: white;
+    position: relative;
+}
+
+form img{
+    width: 30px;
+    position: absolute;
+}
+
+form .a{
+    right: -380px;
+}
+
+form .b{
+    right: -370px;
+}
+
+form .c{
+    right: -415px;
+}
+
+form .d{
+    right: -294px;
 }
 
 form input{
@@ -70,7 +160,9 @@ form button{
 
 form button:hover{
     transform: translateY(-5px);
-}
+} */
 
 /* #fffcdc */
 /* #dfe3ce */
+
+
