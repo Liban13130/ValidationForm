@@ -47,31 +47,104 @@ input{
     background: transparent;
     border: none;
     border-bottom: 1px solid #f1f1f1;
+    transition: 0.5s;
+}
+
+input:focus{
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 1);
 }
 
 input::placeholder{
     font-size: 16px;
 }
 
-
-
-
-
-
-
-
-
-
-
-img{
-    width: 30px;
+.icon-input-container{
+    position: relative;
 }
 
+.icon-check{
+    position: absolute;
+    width: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    display: none;
+}
 
+.error-msg{
+    margin-top: 7px; /* Le margin top ne fonctionne pas car le texte est en display-inline. Pour que ça fonctionne il faut le mettre en display block */
+    color: #f75252;
+    font-weight: 400;
+    display: none;
+}
 
+.password-info{
+    margin-top: 8px;
+    color: #a9a9a9;
+    font-weight: 400;
+    display: block;
+}
 
+.lines{
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
 
+.l1, .l2, .l3{
+    height: 5px;
+    margin: 15px 5px 20px;
+    width: 30%;
+    position: relative;
+}
 
+.l1{
+    display: none;
+    background: #cf5914;
+}
+.l2{
+    display: none;
+    background: #fdee50;
+}
+
+.l3{
+    display: none;
+    background: #14e214;
+}
+
+.lines span{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 10px;
+}
+
+form button{
+    display: block;
+    margin: 40px auto 10px;
+    background-color: #fffcdc;
+    border: none;
+    min-width: 150px;
+    padding: 12px 15px;
+    font-size: 20px;
+    border-radius: 3px;
+    outline: none;
+    font-weight: 600;
+    font-family: Raleway, sans-serif;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+form button:hover{
+    transform: translateY(-5px);
+    background: #e3dfa2;
+}
+
+form button:focus{
+    transform: scale(1.05);
+}
 
 
 
