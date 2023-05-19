@@ -15,7 +15,7 @@ function showValidation({index, validation}){
     } else{
         validationIcons[index].style.display = "inline"
         validationIcons[index].src = "ressources/error.svg"
-        if(validattionText[index]) validattionText[index].style.display = "none"
+        if(validattionText[index]) validattionText[index].style.display = "block"
     }
 }
 
@@ -89,13 +89,56 @@ function passwordValidation(e){
     }else{
         showValidation({index: 2, validation: true})
     }
-    console.log(validationResult);
+    passwordStrengh()
+}
+
+const lines = document.querySelectorAll('.lines div') //Appelle toutes les div dans la div lines
+
+function passwordStrengh(){
+    const passwordLength = passwordInput.value.length;
+
+    if(!passwordLength){
+        addLines(0)
+    }else if(passwordLength > 12 && passwordVerification.symbol && passwordVerification.number){
+        addLines(3)
+    }else if(passwordLength > 9 && passwordVerification.symbol && passwordVerification.number){
+        addLines(2)
+    }else if(passwordLength > 6 && passwordVerification.symbol && passwordVerification.number){
+        addLines(1)
+    }
+    function addLines(numberOfLines){
+        lines.forEach((el, index)=>{
+            if(index < numberOfLines){
+                el.style.display = "block"
+            }else{
+                el.style.display = "none"
+            }
+        })
+    }
+    if(validationIcons[3].style.display = "inline"){
+        confirmPassword()
+    }
 }
 
 
+const confirmInput = document.querySelector('.input-group:nth-child(4) input')
 
+ // C'est quand on enleve le focus de l'élément en question. L'input dans ce cas la.
+confirmInput.addEventListener('input', confirmPassword) // Quand on ecrit dans l'input.
 
-
+function confirmPassword(){
+    const confirmedValue = confirmInput.value;
+    
+    if(!confirmedValue && !passwordValue){
+        validationIcons[3].style.display = "none"
+    }
+    else if(confirmedValue !== passwordValue){
+        showValidation({index: 3, validation: false})
+    }
+    else{
+        showValidation({index: 3, validation: true})
+    }
+}
 
 
 

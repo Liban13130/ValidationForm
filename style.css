@@ -88,29 +88,28 @@ input::placeholder{
 .lines{
     width: 80%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     margin: 0 auto;
 }
 
 .l1, .l2, .l3{
+    border-radius: 5px;
     height: 5px;
     margin: 15px 5px 20px;
     width: 30%;
     position: relative;
+    display: none;
 }
 
 .l1{
-    display: none;
-    background: #cf5914;
+    background: #e40a0a;
 }
 .l2{
-    display: none;
     background: #fdee50;
 }
 
 .l3{
-    display: none;
     background: #14e214;
 }
 
