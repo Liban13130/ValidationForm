@@ -1,3 +1,47 @@
+const inputValidity = {
+    user: false,
+    email: false,
+    password: false,
+    passwordConfirmation: false
+}
+
+const form = document.querySelector('form')
+const container = document.querySelector('.container')
+
+form.addEventListener('submit', handleForm)
+
+let isAnimating = false
+
+function handleForm(e){
+    e.preventDefault()
+    const keys = Object.keys(inputValidity)
+
+    const failedInputs = keys.filter(key => {
+        if(inputValidity[key] === false){
+            return key;
+        }
+    })
+
+    if(failedInputs.length && !isAnimating){
+        isAnimating = true
+        container.classList.add('shake')
+        setTimeout(()=>{
+            container.classList.remove('shake')
+            isAnimating = false
+        },400)
+        
+        failedInputs.forEach(input => {
+            const index = keys.indexOf(input)
+            showValidation({index: index, validation: false})
+        })
+
+    }else{
+        alert('Données envoyées avec succès !')
+    }
+    console.log(failedInputs);
+
+}
+
 const validationIcons = document.querySelectorAll('.icon-check');
 const validattionText = document.querySelectorAll('.error-msg');
 
@@ -22,8 +66,10 @@ function showValidation({index, validation}){
 function userValidation(){
     if(userInput.value.length >= 3){
         showValidation({index: 0, validation: true})
+        inputValidity.user = true
     } else{
         showValidation({index: 0, validation: false})
+        inputValidity.user = false
     }
 }
 
@@ -37,8 +83,10 @@ const regexEmail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/
 function mailValidation(){
     if(regexEmail.test(mailInput.value)){
         showValidation({index: 1, validation: true})
+        inputValidity.email = true
     }else{
         showValidation({index: 1, validation: false})
+        inputValidity.email = false
     }
 }
 
@@ -86,8 +134,10 @@ function passwordValidation(e){
 
     if(validationResult !== 3){
         showValidation({index: 2, validation: false})
+        inputValidity.password = false
     }else{
         showValidation({index: 2, validation: true})
+        inputValidity.password = true
     }
     passwordStrengh()
 }
@@ -134,14 +184,15 @@ function confirmPassword(){
     }
     else if(confirmedValue !== passwordValue){
         showValidation({index: 3, validation: false})
+        inputValidity.passwordConfirmation = false
+
     }
     else{
         showValidation({index: 3, validation: true})
+        inputValidity.passwordConfirmation = true
+
     }
 }
-
-
-
 
 
 
